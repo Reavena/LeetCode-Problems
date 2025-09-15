@@ -26,3 +26,18 @@ class SolutionTwoPass(object):
             if comp in hash and hash[comp]!=j:
                 return [j,hash[comp]]
         return []
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        hash = {}
+        for i in range (len(nums)):
+            comp = target - nums[i]
+            if comp in hash and hash[comp]!=i:
+                return [i,hash[comp]]
+            hash[nums[i]] = i
+        return []
